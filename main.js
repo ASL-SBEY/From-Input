@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
   if (age.value.trim() === "") {
     error.textContent = "Age is required";
     isValid = false;
-  } else if (isNaN(age.value.trim()) || age.value.trim() <= 18) {
+  } else if (isNaN(age.value.trim()) || age.value.trim() <= 17) {
     error.textContent = "Age must be at least 18";
     isValid = false;
   } else {
@@ -57,7 +57,7 @@ form.addEventListener("submit", function (e) {
   } else if (password.value.trim().length < 8) {
     errorpassword.textContent = "Password must be at least 8 characters long";
     isValid = false;
-  } else if (!/[A-Z@0-9]/.test(password.value.trim())) {
+  } else if (!/[A-Z/@/0-9]/.test(password.value.trim())) {
     errorpassword.textContent =
       "Password must contain at least one uppercase letter, special character (@), or number";
     isValid = false;
@@ -78,5 +78,9 @@ form.addEventListener("submit", function (e) {
   if (isValid) {
     // Process form submission
     result.textContent = "Form submitted successfully!";
+
+    // Optionally, you can reset the form here
+    // form.reset();
+    document.getElementById("myform").reset();
   }
 });
