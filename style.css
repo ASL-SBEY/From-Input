@@ -60,6 +60,7 @@ button {
 }
 p {
   color: green;
+  font-size: larger;
 }
 button:hover {
   background-color: #0f0f0f96;
